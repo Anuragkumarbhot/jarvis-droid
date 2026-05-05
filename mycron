@@ -1,0 +1,3 @@
+*/5 * * * * cd ~/jarvis-droid && echo "Heartbeat: $(date)" >> logs/heartbeat_log
+0 * * * * cd ~/jarvis-droid && termux-battery-status | jq .percentage >> logs/auto_battery.log
+*/30 * * * * cd ~/jarvis-droid && curl -s 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd' | jq . >> logs/crypto_alerts.log
